@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oryna</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Oryna</h1>
+        <p>Find Verified Professionals Easily</p>
+    </header>
+
+    <section class="search-section">
+        <input type="text" id="searchInput" placeholder="Search by service or owner name..." onkeyup="filterProfiles()">
+    </section>
+
+    <section class="profiles" id="profilesContainer">
+        <!-- Sample Profiles -->
+        <div class="profile-card">
+            <h2>John Doe</h2>
+            <p>Plumber | 5 Years Experience</p>
+            <p>Service: Home Plumbing, Leak Repairs</p>
+            <p>Price: ₹500 – ₹2,000</p>
+            <button>Contact</button>
+        </div>
+
+        <div class="profile-card">
+            <h2>Jane Smith</h2>
+            <p>Photographer | 8 Years Experience</p>
+            <p>Service: Wedding, Events, Portraits</p>
+            <p>Price: ₹3,000 – ₹15,000</p>
+            <button>Contact</button>
+        </div>
+
+        <div class="profile-card">
+            <h2>Raj Kumar</h2>
+            <p>Electrician | 10 Years Experience</p>
+            <p>Service: Wiring, Appliance Repair</p>
+            <p>Price: ₹300 – ₹1,500</p>
+            <button>Contact</button>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
