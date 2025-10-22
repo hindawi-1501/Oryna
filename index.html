@@ -1,48 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oryna</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oryna - Verified Professionals Directory</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
-        <h1>Oryna</h1>
-        <p>Find Verified Professionals Easily</p>
-    </header>
+  <header>
+    <h1>Oryna</h1>
+    <p>Find Verified Professionals & Services Near You</p>
+  </header>
 
-    <section class="search-section">
-        <input type="text" id="searchInput" placeholder="Search by service or owner name..." onkeyup="filterProfiles()">
-    </section>
+  <!-- 🔹 Category Buttons -->
+  <section class="categories">
+    <button class="category-btn" onclick="showCategory('all')">All</button>
+    <button class="category-btn" onclick="showCategory('Plumber')">Plumber</button>
+    <button class="category-btn" onclick="showCategory('Electrician')">Electrician</button>
+    <button class="category-btn" onclick="showCategory('Photographer')">Photographer</button>
+    <button class="category-btn" onclick="showCategory('Hospital')">Hospital</button>
+    <button class="category-btn" onclick="showCategory('Lawyer')">Lawyer</button>
+    <button class="category-btn" onclick="showCategory('Tutor')">Tutor</button>
+    <button class="category-btn" onclick="showCategory('Salon')">Salon</button>
+  </section>
 
-    <section class="profiles" id="profilesContainer">
-        <!-- Sample Profiles -->
-        <div class="profile-card">
-            <h2>John Doe</h2>
-            <p>Plumber | 5 Years Experience</p>
-            <p>Service: Home Plumbing, Leak Repairs</p>
-            <p>Price: ₹500 – ₹2,000</p>
-            <button>Contact</button>
-        </div>
+  <!-- 🔹 Search Bar -->
+  <section class="search-section">
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="Search by name, service, or category..."
+      onkeyup="filterProfiles()"
+    />
+  </section>
 
-        <div class="profile-card">
-            <h2>Jane Smith</h2>
-            <p>Photographer | 8 Years Experience</p>
-            <p>Service: Wedding, Events, Portraits</p>
-            <p>Price: ₹3,000 – ₹15,000</p>
-            <button>Contact</button>
-        </div>
+  <!-- 🔹 Profiles -->
+  <section class="profiles" id="profilesContainer">
+    <!-- Sample Profiles -->
+    <div class="profile-card" data-category="Plumber">
+      <h2>John Doe</h2>
+      <p>Plumber | 5 Years Experience</p>
+      <p>Service: Home Plumbing, Leak Repairs</p>
+      <p>Price: ₹500 – ₹2,000</p>
+      <p>⭐ 4.5/5 (120 reviews)</p>
+      <button>Contact</button>
+    </div>
 
-        <div class="profile-card">
-            <h2>Raj Kumar</h2>
-            <p>Electrician | 10 Years Experience</p>
-            <p>Service: Wiring, Appliance Repair</p>
-            <p>Price: ₹300 – ₹1,500</p>
-            <button>Contact</button>
-        </div>
-    </section>
+    <div class="profile-card" data-category="Photographer">
+      <h2>Jane Smith</h2>
+      <p>Photographer | 8 Years Experience</p>
+      <p>Service: Weddings, Events, Portraits</p>
+      <p>Price: ₹3,000 – ₹15,000</p>
+      <p>⭐ 4.8/5 (87 reviews)</p>
+      <button>Contact</button>
+    </div>
 
-    <script src="script.js"></script>
+    <div class="profile-card" data-category="Electrician">
+      <h2>Raj Kumar</h2>
+      <p>Electrician | 10 Years Experience</p>
+      <p>Service: Wiring, Appliance Repair</p>
+      <p>Price: ₹300 – ₹1,500</p>
+      <p>⭐ 4.6/5 (65 reviews)</p>
+      <button>Contact</button>
+    </div>
+
+    <div class="profile-card" data-category="Hospital">
+      <h2>City Care Hospital</h2>
+      <p>Hospital | 24/7 Emergency Services</p>
+      <p>Service: General Care, Surgery, Diagnostics</p>
+      <p>Contact: +91 98765 43210</p>
+      <p>⭐ 4.7/5 (220 reviews)</p>
+      <button>Book Appointment</button>
+    </div>
+
+    <div class="profile-card" data-category="Lawyer">
+      <h2>Adv. Neha Sharma</h2>
+      <p>Lawyer | 12 Years Experience</p>
+      <p>Service: Civil, Criminal, Corporate Law</p>
+      <p>Price: ₹2,000 – ₹10,000</p>
+      <p>⭐ 4.9/5 (110 reviews)</p>
+      <button>Consult</button>
+    </div>
+
+    <div class="profile-card" data-category="Lawyer">
+      <h2>Adv. Rohit Mehra</h2>
+      <p>Lawyer | 9 Years Experience</p>
+      <p>Service: Divorce, Property, Legal Notices</p>
+      <p>Price: ₹1,500 – ₹8,000</p>
+      <p>⭐ 4.7/5 (76 reviews)</p>
+      <button>Consult</button>
+    </div>
+
+    <div class="profile-card" data-category="Tutor">
+      <h2>Ramesh Verma</h2>
+      <p>Tutor | 7 Years Experience</p>
+      <p>Subjects: Maths, Physics, Chemistry</p>
+      <p>Price: ₹500/hr</p>
+      <p>⭐ 4.8/5 (140 reviews)</p>
+      <button>Book Class</button>
+    </div>
+
+    <div class="profile-card" data-category="Salon">
+      <h2>Glow & Style Salon</h2>
+      <p>Salon | Beauty & Grooming</p>
+      <p>Services: Haircut, Spa, Bridal Makeup</p>
+      <p>Price: ₹300 – ₹5,000</p>
+      <p>⭐ 4.6/5 (98 reviews)</p>
+      <button>Book Now</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Oryna | Verified Local Professionals</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
